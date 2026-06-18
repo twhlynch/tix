@@ -1,0 +1,26 @@
+{
+	"type": "module",
+	"dependencies": {
+		"node-fetch": "^2.6.1",
+		"tweetnacl": "^1.0.3",
+		"wrangler": "^4.45.0"
+	},
+	"devDependencies": {
+		"@eslint/js": "^10.0.1",
+		"@ianvs/prettier-plugin-sort-imports": "^4.7.1",
+		"@types/node": "^25.9.2",
+		"@types/node-fetch": "^2.6.13",
+		"discord-api-types": "^0.38.38",
+		"eslint": "^10.5.0",
+		"jiti": "^2.7.0",
+		"typescript": "^6.0.3",
+		"typescript-eslint": "^8.61.0"
+	},
+	"scripts": {
+		"register": "export $(grep -v '^#' .env | xargs) && node cmd/register.js",
+		"publish": "wrangler deploy",
+		"format": "prettier --write src/",
+		"lint": "eslint src/",
+		"check": "tsc --noEmit"
+	}
+}
